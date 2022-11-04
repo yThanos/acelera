@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <Label>vermelho</Label>
+    <input type="radio" onclick="vermelho()" name="opcao"/>
+    <label>verde</label>
+    <input type="radio" onclick="verde()" name="opcao"/>
+    <label>azul</label>
+    <input type="radio" onclick="azul()" name="opcao"/>
+    <label>amarelo</label>
+    <input type="radio" onclick="amarelo()" name="opcao"/>
+
+    <script>
+        function vermelho() {
+            document.body.style.background = "red";
+        }
+        function verde() {
+            document.body.style.background = "green";
+        }
+        function azul() {
+            document.body.style.background = "blue";
+        }
+        function amarelo() {
+            document.body.style.background = "yellow";
+        }
+    </script>
+</body>
+</html>
