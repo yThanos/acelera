@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parag">Vivamus aliquam dui ligula, ac convallis urna ultrices eget. Vestibulum eu velit arcu. Proin neque metus, vestibulum nec elit a, viverra faucibus est. Vestibulum pellentesque justo ac tortor eleifend, vitae dictum dolor gravida. Ut sem neque, accumsan eget purus ut, lacinia mollis odio. Morbi dictum est dui, vitae euismod magna pharetra at. Nunc non libero leo. Nulla feugiat libero quis pulvinar scelerisque. Aenean scelerisque venenatis dolor dapibus convallis. Nulla mi ex, scelerisque et tincidunt non, finibus vel augue. Morbi aliquet hendrerit dolor, et venenatis sapien gravida vel. Donec aliquet luctus rutrum. Nunc lobortis, dui eu imperdiet dapibus, libero dui consequat dolor, quis consequat risus nisl eget elit. Ut lacus massa, malesuada a dapibus eget, accumsan eu velit. Sed arcu sem, volutpat vitae pellentesque ut, posuere non est.</p>
+  
+    <input type="button" value="Alternar" onclick="alterna()">
+    <script>
+        var i = 0;
+        function alterna(){
+            if(i % 2 == 0){
+            document.getElementById("parag").style.visibility = "hidden";
+            } else{
+            document.getElementById("parag").style.visibility = "visible";
+            }
+            i++
+        }
+    </script>
+</body>
+</html>
