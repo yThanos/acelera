@@ -1,0 +1,19 @@
+body {
+    color: #000000;
+    background-color: #cccccc;
+    font-family: Verdana, Geneva, Arial, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+}
+div{
+    width: 500px;
+    height: 313px;
+}
+#um{
+    margin-top: 20px;
+    margin-right: 10px;
+    float: left;
+}
+#dois{
+    float: left;
+}
