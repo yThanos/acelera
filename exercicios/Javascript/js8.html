@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <p id="letra">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed pretium felis, ut viverra ex. Curabitur cursus dui ut nibh pulvinar congue. Phasellus auctor consectetur mattis. Etiam sollicitudin est et magna maximus, sed pellentesque ipsum pellentesque. Vivamus porttitor ante ac mauris malesuada faucibus. Vestibulum et tincidunt lacus, non interdum lacus. Etiam eleifend dignissim auctor. Etiam luctus tortor eget sollicitudin feugiat. Aenean elit lectus, auctor ac volutpat at, condimentum ac orci. Cras placerat, felis eu consequat euismod, quam neque viverra est, vel egestas risus arcu et nunc. Pellentesque ullamcorper ipsum risus, in semper est laoreet eget. Morbi mauris lacus, venenatis quis libero id, iaculis pretium nisl. Aliquam lectus dui, viverra vitae lectus vel, iaculis lacinia ligula. Aliquam vitae ultricies lectus. Ut sed neque risus.</p>
+
+    <input type="button" onclick="lb()" value="Letra Preta">
+    <input type="button" onclick="lw()" value="Letra Branca">
+    <input type="button" onclick="bb()" value="Fundo Preto">
+    <input type="button" onclick="bw()" value="Fundo Branco">
+    <input type="button" onclick="la()" value="Aumenta Fonte">
+    <input type="button" onclick="ld()" value="Diminui Fonte">
+    <input type="button" onclick="ma()" value="Maiusculo">
+    <input type="button" onclick="mi()" value="Minusculo">
+
+    <script>
+        function lb(){
+            document.getElementById("letra").style.color = "black";
+        }
+        function lw(){
+            document.getElementById("letra").style.color = "white";
+        }
+        function bb(){
+            document.body.style.background = "black";
+        }
+        function bw(){
+            document.body.style.background = "white";
+        }
+        var fonte = 16;
+        function la(){
+            fonte++;
+            document.getElementById("letra").style.fontSize = fonte+"px";
+        }
+        function ld(){
+            fonte--;
+            document.getElementById("letra").style.fontSize = fonte+"px";
+        }
+        function ma(){
+            document.getElementById("letra").style.textTransform = "uppercase";
+        }
+        function mi(){
+            document.getElementById("letra").style.textTransform = "lowercase";
+        }
+    </script>
+</body>
+</html>

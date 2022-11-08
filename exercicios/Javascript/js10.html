@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome">
+        <br>
+        <label>Pessoa:</label>
+        <br>
+        <label for="pf">Fisica: </label>
+        <input type="radio" name="pessoa" id="pf" onclick="verifica()"  checked>
+        <label for="pj">Juridica: </label>
+        <input type="radio" name="pessoa" id="pj" onclick="verifica()">
+        <br>
+        <label for="cpf">CPF: </label>
+        <input type="text" id="cpf">
+        <br>
+        <label for="cnpj">CNPJ: </label>
+        <input type="text" id="cnpj" disabled>
+        <br>
+        <label for="data">Data de nascimento: </label>
+        <input type="number" id="data">
+        <br>
+        <label for="ende">Endereço: </label>
+        <input type="text" id="ende">
+        <br>
+        <label for="cep">CEP: </label>
+        <input type="number" id="cep">
+        <br>
+        <label for="fone">Telefone: </label>
+        <input type="text" id="fone">
+        <br>
+        <label for="email">Email: </label>
+        <input type="text" id="email">
+        <br>
+        <input type="submit" value="Cadastrar">
+    </form>
+    <script>
+        function verifica(){
+            if(document.getElementById("pf").checked == true){
+                document.getElementById("cpf").disabled = false;
+                document.getElementById("cnpj").disabled = true;
+                document.getElementById("data").disabled = false;
+            } else if(document.getElementById("pj").checked == true){
+                document.getElementById("cnpj").disabled = false;
+                document.getElementById("cpf").disabled = true;
+                document.getElementById("data").disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

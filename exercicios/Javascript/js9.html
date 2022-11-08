@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label>Login: </label>
+        <input type="text">
+        <br>
+        <label>Senha</label>
+        <input type="password" id="s1">
+        <br>
+        <label>Confirmar senha: </label>
+        <input type="password" id="s2">
+        <br>
+        <input type="button" value="Cadastrar" onclick="verifica()">
+    </form>
+    <script>
+        var s1 = document.getElementById("s1");
+        var s2 = document.getElementById("s2");
+        function verifica(){
+            if(s1.value == s2.value){
+                if(s1.size > 5){
+                    alert("cadastrado");
+                } else{
+                    alert("senha curta");
+                }
+            } else{
+                alert("senhas diferentes");
+            }
+        }
+    </script>
+</body>
+</html>
