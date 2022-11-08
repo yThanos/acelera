@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>1: </label>
+        <input type="checkbox" id="check1" onclick="check()"/>
+
+        <label>2: </label>
+        <input type="checkbox" id="check2" onclick="check()"/>
+
+        <label>3: </label>
+        <input type="checkbox" id="check3" onclick="check()"/>
+
+        <label>4: </label>
+        <input type="checkbox" id="check4" onclick="check()"/>
+
+        <input type="button" name="botao" id="bota" value="Botão" disabled/>
+    </form>
+    <script>
+        var cont = 0;
+        
+        function check(){
+            cont = 0;
+
+            if (document.getElementById('check1').checked) {
+                cont = cont + 1;
+            } if (document.getElementById('check2').checked) {
+                cont = cont + 1;
+            } if (document.getElementById('check3').checked) {
+                cont = cont + 1;
+            } if (document.getElementById('check4').checked) {
+                cont = cont + 1;
+            }
+            if(cont > 1){
+                document.getElementById("bota").disabled = false;
+            }else{
+                document.getElementById("bota").disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>
