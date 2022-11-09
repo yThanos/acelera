@@ -24,10 +24,12 @@
         var s2 = document.getElementById("s2");
         function verifica(){
             if(s1.value == s2.value){
-                if(s1.lenght > 5){
-                    alert("cadastrado");
-                } else{
+                if(s1.lenght < 6){
                     alert("senha curta");
+                } else if(s1.lenght > 10){
+                    alert("senha longa");
+                }else{
+                    alert("cadastrado");
                 }
             } else{
                 alert("senhas diferentes");
