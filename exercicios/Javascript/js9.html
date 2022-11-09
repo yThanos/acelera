@@ -24,9 +24,9 @@
         var s2 = document.getElementById("s2");
         function verifica(){
             if(s1.value == s2.value){
-                if(s1.lenght < 6){
+                if(s1.value.length < 6){
                     alert("senha curta");
-                } else if(s1.lenght > 10){
+                } else if(s1.value.length > 10){
                     alert("senha longa");
                 }else{
                     alert("cadastrado");
