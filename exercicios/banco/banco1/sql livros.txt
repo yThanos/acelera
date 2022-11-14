@@ -1,0 +1,42 @@
+4---------
+CREATE DATABASE BIBLIOTECA;
+
+5---------
+CREATE TABLE categoria (codigo serial primary key, descricao varchar(50));
+
+CREATE TABLE autor(codigo serial primary key, nome varchar(50), nacionalidade varchar(50));
+
+CREATE TABLE livro (ISBN bigint primary key, titulo varchar(50), ano smallint, editora varchar(50), autor int, categoria int, FOREIGN KEY(autor) REFERENCES autor(codigo), FOREIGN KEY(categoria) REFERENCES categoria(codigo));
+
+
+6---------
+insert into categoria (descricao) VALUES ('Literatura Juvenil');
+insert into categoria (descricao) VALUES ('Ficção Cientifica');
+insert into categoria (descricao) VALUES ('Humor');
+
+INSERT INTO autor (nacionalidade, nome) VALUES ('Inglatera','J. K. Rowling');
+INSERT INTO autor (nacionalidade, nome) VALUES ('Inglatera','Clive Staples Lewis');
+INSERT INTO autor (nacionalidade, nome) VALUES ('Brasil','Afonso Solano');
+INSERT INTO autor (nacionalidade, nome) VALUES ('Brasil','Marcos Piangers');
+INSERT INTO autor (nacionalidade, nome) VALUES ('Brasil','Ciro Botelho - tiririca');
+INSERT INTO autor (nacionalidade, nome) VALUES ('Brasil','Bianca Mól');
+
+INSERT INTO livro VALUES (8532511015, 'Harry Potter e a Pedra Filosofal', 2000, 'Rocco', 1, 1);
+INSERT INTO livro VALUES (9788578270698, 'As Cronica de Narnia', 2009, 'Wmf Martins Fontes', 2, 1);
+INSERT INTO livro VALUES (9788577343348, 'O Espadachim de Carvão', 2013, 'Casa da Palavra', 3, 2);
+INSERT INTO livro VALUES (9788581742458, 'O Papai É Pop', 2015, 'Belas Letras', 4, 3);
+INSERT INTO livro VALUES (9788582302026, 'Pior Que Ta Não Fica', 2015, 'Matrix', 5, 3);
+INSERT INTO livro VALUES (9788577345670, 'Gartota Desdobravel', 2015, 'Casa da Palavra', 6, 1);
+INSERT INTO livro VALUES (8532512062, 'Harry Potter e o prisioneiro de Azkaban', 2000, 'Rocco', 1, 1);
+
+7--------
+select * from livro, autor, categoria where autor.codigo = livro.autor and categoria.codigo = livro.categoria ORDER BY titulo;
+
+8--------
+select * from livro, autor, categoria where autor.codigo = livro.autor and categoria.codigo = livro.categoria ORDER BY autor.nome;
+
+9--------
+select * from livro, autor, categoria where autor.codigo = livro.autor and categoria.codigo = livro.categoria and categoria.descricao = 'Literatura Juvenil' ORDER BY ano;
+
+10-------
+select * from livro, autor, categoria WHERE livro.categoria = categoria.codigo and autor.codigo = livro.autor and livro.ano > 1999 and livro.ano < 2011 and (categoria.descricao = 'Humor' or categoria.descricao = 'Ficção Cientifica');
