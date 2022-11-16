@@ -1,0 +1,11 @@
+create table autor (id_autor serial primary key, nome varchar(50), nacionalidade varchar(50));
+
+create table categoria (id_categ serial primary key, tipo_cetegoria varchar(50));
+
+create table editora (id_editora serial primary key, nome varchar(50));
+
+create table livro (ISBN bigint primary key, titulo varchar(50), ano_publicacao smallint, fk_editora int, fk_categoria int, 
+					foreign key(fk_editora) references editora(id_editora), foreign key(fk_categoria) references categoria(id_categ));
+
+create table livroautor (id_livaut serial primary key, fk_livro int, fk_autor int, 
+						 foreign key(fk_livro) references livro(ISBN), foreign key(fk_autor) references autor(id_autor));
