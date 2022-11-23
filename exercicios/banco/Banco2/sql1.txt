@@ -1,0 +1,5 @@
+CREATE TABLE mae (codMae int PRIMARY KEY, nome varchar(50), endereco varchar(100), telefone varchar(14), data_nasc date);
+
+CREATE TABLE medico(CRM bigint PRIMARY KEY, nome varchar(50), telefone varchar(14), especialidade varchar(50));
+
+CREATE TABLE bebe(nome varchar(50), data_nasc date, peso_nasc float, atura_nasc smallint, mae int, medico bigint, FOREIGN KEY(mae) REFERENCES mae(codMae), FOREIGN KEY(medico) REFERENCES medico(CRM));

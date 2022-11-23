@@ -1,0 +1,5 @@
+CREATE TABLE cliente(RG bigint PRIMARY KEY, nome varchar(50), telefone varchar(14), endereco varchar(100));
+
+CREATE TABLE produto(codProd int PRIMARY KEY, nome varchar(50), tipo varchar(20), preco money, estoque int);
+
+CREATE TABLE compra(cliente bigint, produto int, data_compra date, quantidade int, preco_total money, FOREIGN KEY(cliente) REFERENCES cliente(RG), FOREIGN KEY(produto) REFERENCES produto(codProd));
