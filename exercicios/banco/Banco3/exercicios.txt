@@ -1,0 +1,44 @@
+4-------------
+CREATE DATABASE DINOSSAUROS;
+5-------------
+CREATE TABLE era (codEra int PRIMARY KEY, nome varchar(20), inicio smallint, fim smallint);
+
+CREATE TABLE grupo (codGrupo int PRIMARY KEY, nome varchar(20));
+
+CREATE TABLE dinossauro (nome varchar(20), grupo int, toneladas int, ano_desc smallint, descobridor varchar(50), era int, pais_desc varchar(30), inicio smallint, fim smallint, FOREIGN KEY(grupo) REFERENCES grupo(codGrupo), FOREIGN KEY(era) REFERENCES era(codEra));
+
+6-------------
+insert into era values (1, 'Triássico', 250, 203);
+insert into era values (2, 'Jurássico', 203, 135);
+insert into era values (3, 'Cretáceo', 135, 65);
+
+insert into grupo values (1, 'Anquilossauros');
+insert into grupo values (2, 'Ceratopsídeos');
+insert into grupo values (3, 'Estegossauros');
+insert into grupo values (4, 'Nodossauros');
+insert into grupo values (5, 'Ornitópodes');
+insert into grupo values (6, 'Paquicefalossauros');
+insert into grupo values (7, 'Prossaurópdes');
+insert into grupo values (8, 'Protoceratopsídeos');
+insert into grupo values (9, 'Saurópodes');
+insert into grupo values (10, 'Terópodes');
+
+insert into dinossauro values ('Saichania', 1, 4, 1977, 'Maryanska', 3, 'Mongólia', 145, 66);
+insert into dinossauro values ('Triceratóps', 2, 6, 1887, 'John Bell Hatcher', 3, 'Canadá', 70, 66);
+insert into dinossauro values ('Kentrossauro', 3, 2, 1909, 'Cientistas Alemães', 2, 'Tanzânia', 201, 145);
+insert into dinossauro values ('Pinacossauro', 1, 6, 1999, 'Museu Americano de Historia Natural', 3, 'China', 85, 75);
+insert into dinossauro values ('Alossauro', 10, 3, 1877, 'Othniel Charles Marsh', 2, 'América do Norte', 155, 150);
+insert into dinossauro values ('Torossauro', 2, 8, 1891, 'John Bell Hatcher', 3, 'USA', 67, 65);
+insert into dinossauro values ('Anquilossauro', 1, 8, 1906, 'Barnum Brown', 3, 'América do Norte', 66, 63);
+
+7-------------
+select * from dinossauro, era, grupo where dinossauro.grupo = grupo.codGrupo and dinossauro.era = era.codEra;
+
+8-------------
+select * from dinossauro, era, grupo where dinossauro.grupo = grupo.codGrupo and dinossauro.era = era.codEra order by dinossauro.descobridor;
+
+9-------------
+select * from dinossauro, grupo, era where dinossauro.grupo = grupo.codGrupo and dinossauro.era = era.codEra and grupo.nome = 'Anquilossauros' order by dinossauro.ano_desc;
+
+10------------
+select * from dinossauro, grupo, era where dinossauro.grupo = grupo.codgrupo and dinossauro.era = era.codEra and dinossauro.ano_desc >= 1900 and dinossauro.ano_desc <= 1999 and (grupo.nome = 'Anquilossauros' or grupo.nome = 'Ceratopsídeos');
