@@ -1523,11 +1523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vitor.rosmann\\source\\repos\\poo\\poo\\poo.csproj",
+      "projectUniqueName": "C:\\Users\\vitor.rosmann\\Source\\Repos\\acelera\\exercicios\\entity\\poo\\poo\\poo.csproj",
       "projectName": "poo",
-      "projectPath": "C:\\Users\\vitor.rosmann\\source\\repos\\poo\\poo\\poo.csproj",
+      "projectPath": "C:\\Users\\vitor.rosmann\\Source\\Repos\\acelera\\exercicios\\entity\\poo\\poo\\poo.csproj",
       "packagesPath": "C:\\Users\\vitor.rosmann\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vitor.rosmann\\source\\repos\\poo\\poo\\obj\\",
+      "outputPath": "C:\\Users\\vitor.rosmann\\Source\\Repos\\acelera\\exercicios\\entity\\poo\\poo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vitor.rosmann\\AppData\\Roaming\\NuGet\\NuGet.Config",
