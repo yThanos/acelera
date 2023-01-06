@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-100 col-md-100 col-lg-10 mx-auto">
+      <div class="card border-0 shadow rounded-9 my-9">
+        <div class="card-body p-10 p-sm-9">
+          <h2 class="card-title text-center mb-5 fw-light fs-5">
+              Controle de funcionarios
+          </h2>
+          <form>
+            <div class="form-group">
+              <label for="nome">NOME</label>
+              <input [(ngModel)]="funcionario.nome" type="text" name="nome" class="form-control" id="nome" placeholder="Informe o nome do funcionario">
+            </div>
+  
+            <div class="form-group">
+              <label for="cpf">LOGIN</label>
+              <input [(ngModel)]="funcionario.username" name="cpf" type="text" class="form-control" id="cpf" placeholder="Informe o cpf do funcionario">
+            </div>
+
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input [(ngModel)]="funcionario.email" name="email" type="text" class="form-control" id="email" placeholder="Informe o email do funcionario">
+            </div>
+
+            <div class="form-group">
+              <label for="telefone">TELEFONE</label>
+              <input [(ngModel)]="funcionario.telefone" name="telefone" type="text" class="form-control" id="telefone" placeholder="Informe o telefone do funcionario">
+            </div>
+
+            <div class="form-group">
+              <label for="senha">SENHA</label>
+              <input [(ngModel)]="funcionario.senha" name="senha" type="password" class="form-control" id="senha" placeholder="Informe uma senha para o funcionario">
+            </div>
+
+            <div class="form-group">
+              <label for="permissao">PERMISSAO</label>
+              <select [(ngModel)]="funcionario.permissao" class="form-control" name="permissao" id="permissao">
+                <option [ngValue]="adm">Admin</option>
+                <option [ngValue]="est">Estoque</option>
+                <option [ngValue]="rh">RH</option>
+                <option [ngValue]="ven">Vendas</option>
+              </select>
+            </div>
+            
+            <br>
+            <div [ngSwitch]="opcao">
+              <button *ngSwitchCase="'cad'" type="submit" (click)="cadastrar()" class="btn btn-lg btn-primary btn-block" >CADASTRAR</button>
+              <button *ngSwitchCase="'edit'" type="submit" (click)="salvar()" class="btn btn-lg btn-primary btn-block" >SALVAR</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-body p-10 p-sm-9">
+          <div class="form-group">
+            <label>Pesquisar</label>
+            <input type="number" [(ngModel)]="idpesq" class="form-control">
+            <br>
+            <button (click)="busca()" class="btn btn-lg btn-primary">Buscar</button>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOME</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">TELEFONE</th>
+              <th scope="col">LOGIN</th>
+              <th scope="col">PERMISSAO</th>
+              <th scope="col">OPÇÃO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fun of funcionarios;">
+              <th scope="row">{{fun.id}}</th>
+              <th>{{fun.nome}}</th>
+              <th>{{fun.email}}</th>
+              <th>{{fun.telefone}}</th>
+              <th>{{fun.username}}</th>
+              <th>{{fun.permissao}}</th>
+              <th>
+                <button class="btn btn-warning" (click)="editar(fun)">EDITAR</button>
+                <button class="btn btn-danger" (click)="deletar(fun)">DELETAR</button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

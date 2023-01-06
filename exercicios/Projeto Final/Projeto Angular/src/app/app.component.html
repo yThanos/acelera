@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">Projeto</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngIf="hasFuncionarios()">
+        <a class="nav-link" routerLink="/funcionarios">Funcionarios</a>
+      </li>
+      <li class="nav-item" *ngIf="hasClientes()">
+        <a class="nav-link" routerLink="/clientes">Clientes</a>
+      </li>
+      <li class="nav-item" *ngIf="hasProdutos()">
+        <a class="nav-link" routerLink="/produtos">Produtos</a>
+      </li>
+      <li class="nav-item" *ngIf="hasVendas()">
+        <a class="nav-link" routerLink="/vendas">Vendas</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li *ngIf="!isUserAuthenticated()" class="nav-item">
+        <a routerLink="/login" class="nav-link">Login</a>
+      </li>
+      <li *ngIf="isUserAuthenticated()" class="nav-item">
+        <a class="nav-link" (click)="logOut()" routerLink="/">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
